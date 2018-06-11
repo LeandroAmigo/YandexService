@@ -1,11 +1,9 @@
 package services;
 
-import org.xml.sax.SAXException;
 import parsers.ParserFromXML;
 import retrofit2.Retrofit;
 import retrofit2.converter.scalars.ScalarsConverterFactory;
 import retrofit2.Response;
-import javax.xml.parsers.ParserConfigurationException;
 import java.io.IOException;
 
 class ServiceYandex implements Service{
@@ -21,7 +19,7 @@ class ServiceYandex implements Service{
     yandexAPI = retrofit.create(YandexAPI.class);
   }
 
-  @Override public String getMeaning(String term) throws ParserConfigurationException,IOException,SAXException {
+  @Override public String getMeaning(String term) throws IOException {
       String meaning = getResponse(term).body();
       return ParserFromXML.getInstance().format(meaning);
   }

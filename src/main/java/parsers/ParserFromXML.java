@@ -22,10 +22,15 @@ public class ParserFromXML implements InputParser {
     return instance;
   }
 
-	@Override public String format(String text) throws ParserConfigurationException,IOException,SAXException{
-	  Document document= getDocument(text);
-	  NodeList nodeList = getNode(document);
-    String content = getContenido(nodeList);
+	@Override public String format(String text){
+    String content = null;
+    try {
+      Document document = getDocument(text);
+      NodeList nodeList = getNode(document);
+      content = getContenido(nodeList);
+    } catch (ParserConfigurationException | IOException | SAXException exception) {
+      exception.printStackTrace();
+    }
 	  return content;
   }
   private Document getDocument(String text) throws ParserConfigurationException,IOException,SAXException{
