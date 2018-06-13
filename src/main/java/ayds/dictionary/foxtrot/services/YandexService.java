@@ -1,7 +1,7 @@
-package services;
+package ayds.dictionary.foxtrot.services;
 
 import java.io.IOException;
 
-public interface Service {
+public interface YandexService {
   String getMeaning(String term) throws IOException;
 }

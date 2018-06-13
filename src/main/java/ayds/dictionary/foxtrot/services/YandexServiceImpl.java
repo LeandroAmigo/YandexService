@@ -1,17 +1,17 @@
-package services;
+package ayds.dictionary.foxtrot.services;
 
-import parsers.ParserFromXML;
+import ayds.dictionary.foxtrot.parsers.ParserFromXML;
 import retrofit2.Retrofit;
 import retrofit2.converter.scalars.ScalarsConverterFactory;
 import retrofit2.Response;
 import java.io.IOException;
 
-class ServiceYandex implements Service{
+class YandexServiceImpl implements YandexService {
 
   private final String urlAPI = "https://translate.yandex.net/api/v1.5/tr/";
   private YandexAPI yandexAPI;
 
-  ServiceYandex() {
+  YandexServiceImpl() {
     Retrofit retrofit = new Retrofit.Builder()
     .baseUrl(urlAPI)
     .addConverterFactory(ScalarsConverterFactory.create())
