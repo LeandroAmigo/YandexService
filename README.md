@@ -3,10 +3,10 @@
  El tipo de dato utilizado es String.
  
  
-## Usage
+## Uso
 ```java
 String term = "hello world";
-Service service = ServiceModule.getInstance().getRemoteSource();
+YandexService service = ServiceModule.getInstance().getRemoteSource();
 String meaning = service.getMeaning(term);
 // meaning es la respuesta con la correspondiente traduccion a español
 ```
