@@ -6,7 +6,7 @@
 ## Uso
 ```java
 String term = "hello world";
-YandexService service = ServiceModule.getInstance().getRemoteSource();
+YandexService service = YandexServiceModule.getInstance().getRemoteSource();
 String meaning = service.getMeaning(term);
 // meaning es la respuesta con la correspondiente traduccion a español
 ```
